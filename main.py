@@ -2,7 +2,7 @@ import click
 import math
 import sys
 import struct
-import ctypes
+
 
 @click.command()
 @click.help_option('-h', '--help')
@@ -23,21 +23,6 @@ def main(bytes, width, offset, verbose):
 
     if bytes is not None:
         gen_bytes(bytes, width)
-
-
-def get_sys_bit_width():
-    """
-    Get the bit width of the system
-    :return:integer:32 if 32 bit machine, 64 if 64 bit machine
-    """
-    size = 0
-
-    if sys.maxsize == (2 ** 31) - 1:
-        size = 32
-    elif sys.maxsize == (2 ** 63) - 1:
-        size = 64
-
-    return size
 
 
 def msg(message):
