@@ -21,7 +21,7 @@ def main(bytes, width, offset, verbose):
     global verbosity
     verbosity = verbose
 
-    if bytes != None:
+    if bytes is not None:
         gen_bytes(bytes, width)
 
 
